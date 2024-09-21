@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: spring-cloud-config-server
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testing_db
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Seyha-Web-Developer/git-backend-config.git
+      default-label: master
+#symetric
+#encrypt:
+#  key: APODNU3093r2rbjzxcn09u213asdhy08WRFH
+
+#Asymetric
+encrypt:
+  key-store:
+    location: classpath:key/myApiTutorialKey.jks
+    password: a1b2c3d4
+    alias: myApiTutorialKey
